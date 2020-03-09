@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { CustomModalComponent } from 'src/app/modals/custom-modal/custom-modal.component';
+import { TiendasService } from 'src/app/services/tiendas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,19 @@ import { CustomModalComponent } from 'src/app/modals/custom-modal/custom-modal.c
 export class HeaderComponent implements OnInit {
 
   modalConfirm: NgbModalRef;
+  keyword: string;
 
-  constructor(private _modal: NgbModal) { }
+  constructor(private _modal: NgbModal,
+              private tservice: TiendasService,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  search(){
+
+    this.router.navigateByUrl(`search/${this.keyword}`)
+    console.log(this.keyword)
   }
 
   logIn(){

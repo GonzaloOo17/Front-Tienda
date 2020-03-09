@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListAnunciosComponent } from './modules/anuncios/list-anuncios/list-anuncios.component';
 import { CustomModalComponent } from './modals/custom-modal/custom-modal.component';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './modules/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     TiendasComponent,
     ListTiendasComponent,
     ListAnunciosComponent,
-    CustomModalComponent
+    CustomModalComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

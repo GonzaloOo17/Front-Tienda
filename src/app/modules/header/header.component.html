@@ -25,7 +25,12 @@
           </div>
         </li>
         <li class="nav-item">
-          <button class="nav-link" (click)="logIn()">Log in</button>
+          <form (ngSubmit)="search()">
+          <input class="form-control" type="text" [(ngModel)]="keyword" name="keyword" placeholder="Search...">
+        </form>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark" (click)="logIn()">Log in</button>
         </li>
       </ul>
     </div>

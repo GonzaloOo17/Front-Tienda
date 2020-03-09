@@ -27,7 +27,7 @@ export class CustomModalComponent implements OnInit {
 
       });
     
-    this._activeModal.close(true);
+      //this._activeModal.close(true);
   }
 
   decline(){

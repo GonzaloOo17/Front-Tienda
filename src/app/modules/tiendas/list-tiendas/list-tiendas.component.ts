@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TiendasService } from 'src/app/services/tiendas.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-tiendas',
@@ -10,13 +11,20 @@ export class ListTiendasComponent implements OnInit {
 
   tiendas: any[]= [];
 
-  constructor(private tservice: TiendasService) { 
-    this.tservice.listTiendas()
-      .subscribe((data:any)=>{
-        this.tiendas=data;
-      })
+  keyword: any='';
+
+  constructor(private tservice: TiendasService,
+              private route: ActivatedRoute) { 
+
+    
+                this.tservice.listTiendas()
+                .subscribe((data:any)=>{
+                  this.tiendas=data;
+                })
 
   }
+
+  
 
   ngOnInit() {
   }

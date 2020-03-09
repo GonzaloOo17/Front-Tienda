@@ -16,6 +16,10 @@ export class TiendasService {
     return this.http.get(`${this.API}/list_tiendas`);
   }
 
+  searchTiendas(keyword: string){
+    return this.http.get(`${this.API}/list_by_name`);
+  }
+
   listAnuncios(){
     return this.http.get(`${this.API}/list_anuncios`);
   }
