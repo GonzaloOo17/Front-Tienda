@@ -12,6 +12,9 @@ import { ListAnunciosComponent } from './modules/anuncios/list-anuncios/list-anu
 import { CustomModalComponent } from './modals/custom-modal/custom-modal.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './modules/search/search.component';
+import { RegisterComponent } from './modules/users/register/register.component';
+import { RouterModule } from '@angular/router';
+import { TiendaComponent } from './modules/tiendas/tienda/tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -22,10 +25,13 @@ import { SearchComponent } from './modules/search/search.component';
     ListTiendasComponent,
     ListAnunciosComponent,
     CustomModalComponent,
-    SearchComponent
+    SearchComponent,
+    RegisterComponent,
+    TiendaComponent
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule

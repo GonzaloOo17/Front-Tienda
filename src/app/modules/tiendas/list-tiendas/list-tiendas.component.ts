@@ -9,22 +9,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListTiendasComponent implements OnInit {
 
-  tiendas: any[]= [];
+  tiendas: any[] = [];
 
-  keyword: any='';
+  keyword: any = '';
 
   constructor(private tservice: TiendasService,
-              private route: ActivatedRoute) { 
+    private route: ActivatedRoute) {
 
-    
-                this.tservice.listTiendas()
-                .subscribe((data:any)=>{
-                  this.tiendas=data;
-                })
-
+    this.tservice.listTiendas()
+      .subscribe((data: any) => {
+        this.tiendas = data;
+      })
   }
-
-  
 
   ngOnInit() {
   }

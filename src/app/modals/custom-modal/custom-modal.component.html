@@ -8,9 +8,10 @@
         <label for="">
             E-mail:
         </label>
-        <input class="form-control" type="email" [(ngModel)]="email" name="email">
+        <input class="form-control" type="email" [(ngModel)]="user.email" name="email">
         <label for="">Password:</label>
-        <input class="form-control" type="password" [(ngModel)]="password" name="password">
+        <input class="form-control" type="password" [(ngModel)]="user.password" name="password">
+        <a routerLink="register"><small >¿Aun no estás registrado?</small></a>
         <button type="submit" class="btn btn-primary">
             Log in
         </button>

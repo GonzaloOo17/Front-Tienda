@@ -14,12 +14,13 @@ export class SearchComponent implements OnInit {
   tiendas: any[] = [];
 
   constructor(private route: ActivatedRoute,
-              private tservice: TiendasService) { 
-    this.keyword = this.route.snapshot.paramMap.get('keyword');
+    private tservice: TiendasService) {
+    this.keyword = this.route.snapshot.params['keyword'];
+    console.log(this.keyword)
     this.tservice.searchTiendas(this.keyword)
-        .subscribe((data:any)=>{
-          this.tiendas = data;
-        })
+      .subscribe((data: any) => {
+        this.tiendas = data;
+      })
   }
 
   ngOnInit(): void {

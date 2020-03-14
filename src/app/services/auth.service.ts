@@ -11,8 +11,16 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  logIn(){
-    return this.http.get(`${this.API}/login`);
+  logIn(email: string, password: string){
+    return this.http.get(`${this.API}/login/${email}/${password}`);
+  }
+
+  logInPost(user:any){
+    return this.http.post(`${this.API}/login`, user);
+  }
+
+  register(user:any){
+    return this.http.post(`${this.API}/register`, user);
   }
 
 

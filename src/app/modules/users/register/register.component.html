@@ -1,0 +1,26 @@
+
+<div class="container w-50">
+        <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">Bienvenido</h4>
+                <button type="button" class="close" routerLink=""></button>
+            </div>
+            <div class="modal-body">
+            
+                <form #f="ngForm" (ngSubmit)="register()">
+                    <label for="">
+                        E-mail:
+                    </label>
+                    <input class="form-control" type="email" [(ngModel)]="user.email" name="email">
+                    <label for="">Password:</label>
+                    <input class="form-control" type="password" [(ngModel)]="user.password" name="password">
+                    <a ><small >¿Ya estás registrado?</small></a>
+                    <button type="submit" class="btn btn-primary">
+                        Log in
+                    </button>
+                </form>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" routerLink="">Cancel</button>
+            </div>
+</div>
