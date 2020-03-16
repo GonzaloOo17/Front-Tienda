@@ -12,9 +12,16 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
+      <li *ngIf="login" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categorías
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a *ngFor="let categoria of categorias" class="dropdown-item" [routerLink]="['/categoria', categoria.id_categoria]">{{categoria.descripcion}}</a>
+            
+          </div>
+        </li>
 
       <li class="nav-item">
         <form (ngSubmit)="search()">
@@ -31,9 +38,9 @@
           User account
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">My Profile</a>
+          <a class="dropdown-item" [routerLink]="['/usuario', idUser]">My Profile</a>
           <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Log Out</a>
+          <a class="dropdown-item" (click)="logOut()">Log Out</a>
         </div>
       </li>
     </ul>

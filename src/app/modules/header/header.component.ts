@@ -16,8 +16,11 @@ export class HeaderComponent implements OnInit {
   modalConfirm: NgbModalRef;
   keyword: string;
 
-  user: UserModel;
+  user: UserModel = new UserModel();
   login: string = "false";
+  idUser: string = '';
+
+  categorias: any[]= [];
 
   constructor(private _modal: NgbModal,
               private tservice: TiendasService,
@@ -25,8 +28,14 @@ export class HeaderComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-
+    this.idUser=localStorage.getItem("id_user");
     this.login = localStorage.getItem("login");
+
+    this.tservice.listCategorias()
+      .subscribe((data:any)=>{
+        console.log(data)
+        this.categorias=data;
+      })
   }
 
   search(){
@@ -45,9 +54,19 @@ export class HeaderComponent implements OnInit {
 			if (result === true) {
         //lo que quieres que haga cuando se cierre
         this.login = "true";
+        this.idUser=localStorage.getItem("id_user");
+        this.ngOnInit();
 			} else {
 			}
 		});
+  }
+
+  logOut(){
+    localStorage.removeItem("id_user");
+    localStorage.removeItem("login");
+    this.ngOnInit();
+    this.router.navigateByUrl('');
+    
   }
 
 }

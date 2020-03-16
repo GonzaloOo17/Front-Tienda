@@ -19,6 +19,11 @@ export class AuthService {
     return this.http.post(`${this.API}/login`, user);
   }
 
+  getProfile(idUser:string){
+    return this.http.get(`${this.API}/get_profile_user/${idUser}`);
+  }
+  
+
   register(user:any){
     return this.http.post(`${this.API}/register`, user);
   }

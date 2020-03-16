@@ -20,8 +20,23 @@ export class TiendasService {
     return this.http.get(`${this.API}/list_tienda/${keyword}`);
   }
 
+  getTienda(id: string){
+    return this.http.get(`${this.API}/get_tienda/${id}`);
+  }
+
+  getTiendaUser(id: string){
+    return this.http.get(`${this.API}/get_tienda_user/${id}`);
+  }
+
+  getTiendasCategoria(id: string){
+    return this.http.get(`${this.API}/list_tiendas_categoria/${id}`);
+  }
+
   listAnuncios(){
     return this.http.get(`${this.API}/list_anuncios`);
   }
 
+  listCategorias(){
+    return this.http.get(`${this.API}/categorias`);
+  }
 }

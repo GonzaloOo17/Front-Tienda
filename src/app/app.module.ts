@@ -14,7 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './modules/search/search.component';
 import { RegisterComponent } from './modules/users/register/register.component';
 import { RouterModule } from '@angular/router';
-import { TiendaComponent } from './modules/tiendas/tienda/tienda/tienda.component';
+import { TiendaComponent } from './modules/tiendas/tienda/tienda.component';
+import { UserProfileComponent } from './modules/users/user-profile/user-profile.component';
+import { TiendasCategoriaComponent } from './modules/tiendas/tiendas-categoria/tiendas-categoria.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { TiendaComponent } from './modules/tiendas/tienda/tienda/tienda.componen
     CustomModalComponent,
     SearchComponent,
     RegisterComponent,
-    TiendaComponent
+    TiendaComponent,
+    UserProfileComponent,
+    TiendasCategoriaComponent
   ],
   imports: [
     BrowserModule,

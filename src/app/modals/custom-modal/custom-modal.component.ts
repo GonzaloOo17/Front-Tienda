@@ -19,7 +19,7 @@ export class CustomModalComponent implements OnInit {
     email:'',
     password:'',
   }
-  correct: boolean;
+  id: string= '';
 
   constructor(public _activeModal: NgbActiveModal,
               private auth: AuthService) { }
@@ -30,10 +30,12 @@ export class CustomModalComponent implements OnInit {
   accept(){
     this.auth.logInPost(this.user)
       .subscribe((data: any)=>{
-        this.correct = data;
+        this.id = data;
         console.log(data);
-        if (this.correct){
+        if (this.id != ''){
           localStorage.setItem("login", 'true');
+          localStorage.setItem("id_user", this.id);
+          console.log("id cambiado")
           this._activeModal.close(false);
         } else {
           alert("Credenciales incorrectos")
